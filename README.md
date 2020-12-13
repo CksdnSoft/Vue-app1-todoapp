@@ -1,6 +1,6 @@
 # Vue-app1-todoapp
 * A simple todoapp made with vue.
-* Test the difference between local storage and session storage in browsers.
+* Use Local Storage in browsers.
 * Darkmode theme!
 
 # Webpack
