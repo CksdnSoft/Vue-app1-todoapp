@@ -65,8 +65,9 @@ export default {
                 .get('todos')
                 .push(newTodo)
                 .write()
-
+                
             this.todos.push(newTodo)
+            console.log(this.todos)
         },
         updateTodo() {
 
