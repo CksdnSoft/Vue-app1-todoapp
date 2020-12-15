@@ -42,7 +42,7 @@ export default {
             const hasTodos = this.db.has('todos').value()
 
             if(hasTodos) {
-                this.todos = _cloneDeep(this.db.getState().todos)
+                this.todos = this.db.getState().todos
                 console.log(this.todos)
             } else {
                 this.db
@@ -66,8 +66,7 @@ export default {
                 .push(newTodo)
                 .write()
                 
-            this.todos.push(newTodo)
-            console.log(this.todos)
+            var name = this.todos.shift()
         },
         updateTodo() {
 
