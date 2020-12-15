@@ -6,7 +6,7 @@
 ## == Notes == 
 
 ### === Webpack ===
-webpack webpack-cli
+Webpack is a beautiful tool that bundles your source files into one js file. Use it by downloading ```webpack``` & ```webpack-cli``` using ```npm i -D```
 
 ### === Reactivity of reference ===
 
