@@ -1,20 +1,16 @@
 <template>
-    <h1 class="asdf">{{msg}}</h1>
+    <todo-app />
 </template>
 
 <script>
+import TodoApp from './components/TodoApp'
+
 export default {
-    data() {
-        return {
-            msg: 'Hello'
-        }
+    components: {
+        TodoApp
     }
 }
 </script>
 
 <style lang="scss" scoped>
-$color: red;
-.asdf {
-    color: $color;
-}
 </style>
