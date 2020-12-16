@@ -16,9 +16,11 @@ In this project, there was a special case in which Vue could not detect the chan
 
 At first I thought that ```this.db.get('todos').push(newTodo).write()``` pushed the object not only to the local storage, but also to the array. And thus, the item was added twice to the array. However on second thought, this was not possible, because if the array was changed from the first line of code, Vue would have tracked the change and changed the list by its reactivness.
 
-For now, the answer to why this happens is, to my thought, lies within ```this.db.getState().todos```. This line of code returns a _strange_ array, an array that updates on the local storage's changes only when it's methods, like shift() or push(), is used. Since I am not a expert on lowdb or lodash, I cannot confirm that this speculation is absolutely true. Therefore I am planning to ask a question on stack overflow regarding this speculation soon: [link to stack overflow quesiton]
+Next, I thought that the answer to the problem lies within ```this.db.getState().todos```. I though this line of code returns a _strange_ array, an array that updates on the local storage's changes only when it's methods, like shift() or push(), is used. However this was also wrong since the so-called _strange_ array updated to the local storage's change right away.
 
-Using the ```cloneDeep()``` method from lodash stops this problem from happening, as this returns a _normal_ array.
+The answer to this problem is within how Vue update is triggered with arrays. Vue triggers Vue updates only for selected methods. However the method that lodash uses to update the array returned by ```this.db.getState().todos``` is not one of those selected methods and thus Vue does not react (trigger Vue update) to that.
+
+Using the ```cloneDeep()``` method from lodash stops this problem from happening as it returns an array that is not effected by local storage change.
 
 ### === Lowdb / Lodash ===
 Use Lowdb(which in turn uses Lodash) to connect to the Local Storage of the client(browser).

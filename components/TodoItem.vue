@@ -25,26 +25,25 @@
             v-else
             class="item__inner item--normal"
         >
-
-        </div>
-        <input
-            v-model="done"
-            type="checkbox"
-        />
-        <div class="item__title-wrap">
-            <div class="item__title">
-                {{todo.title}}
-            </div>
-            <div class="item__date">
-                {{ date }}
-            </div>
-            <div class="item__actions">
-                <button
-                    key="update"
-                    @click="onEditMode">Edit</button>
-                <button 
-                    key="delete"
-                    @click="deleteTodo">Delete</button>
+            <input
+                v-model="done"
+                type="checkbox"
+            />
+            <div class="item__title-wrap">
+                <div class="item__title">
+                    {{todo.title}}
+                </div>
+                <div class="item__date">
+                    {{ date }}
+                </div>
+                <div class="item__actions">
+                    <button
+                        key="update"
+                        @click="onEditMode">Edit</button>
+                    <button 
+                        key="delete"
+                        @click="deleteTodo">Delete</button>
+                </div>
             </div>
         </div>
     </div>
