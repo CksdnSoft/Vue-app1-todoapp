@@ -3,6 +3,11 @@
 * Use Local Storage in browsers.
 * Darkmode theme!
 
+## == How to ==
+use ```git clone``` to clone this repository to your computer. Then use ```npm install``` to download all dependencies. After that:
+* Use ```npm run dev``` to run this in development mode
+* Use ```npm run build``` to build a production mode directory called 'dist'
+
 ## == Notes == 
 
 ### === Webpack ===
