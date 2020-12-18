@@ -36,14 +36,14 @@
                 <div class="item__date">
                     {{ date }}
                 </div>
-                <div class="item__actions">
-                    <button
-                        key="update"
-                        @click="onEditMode">Edit</button>
-                    <button 
-                        key="delete"
-                        @click="deleteTodo">Delete</button>
-                </div>
+            </div>
+            <div class="item__actions">
+                <button
+                    key="update"
+                    @click="onEditMode">Edit</button>
+                <button 
+                    key="delete"
+                    @click="deleteTodo">Delete</button>
             </div>
         </div>
     </div>
@@ -115,6 +115,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+.todo-item {
+    margin-bottom: 10px;
+    .item__inner {
+        display: flex;
+    }
+    .item__date {
+        font-size:12px;
+    }
+    &.done {
+        .item__title {
+            text-decoration: line-through
+        }
+    }
+}
 
 </style>
