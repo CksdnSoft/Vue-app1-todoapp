@@ -1,4 +1,4 @@
-# Vue-vue-1
+# Vue-1
 * A simple todoapp made with vue.
 * Use Local Storage in browsers.
 * Darkmode theme!
